@@ -9,8 +9,8 @@
 > though: as I said, this is a hobby project. Note that this package doesn't include Git itself; you
 > need to have it installed.
 
-A fast desktop Git client for macOS and Windows. It runs your own `git`, so your config, hooks,
-credential helpers, signing and worktrees behave exactly as they do in the terminal.
+A fast desktop Git client for macOS, Windows and Linux. It runs your own `git`, so your config,
+hooks, credential helpers, signing and worktrees behave exactly as they do in the terminal.
 
 ![The commit graph with branches, pull requests and a commit's details](screenshots/graph.png)
 
@@ -36,6 +36,9 @@ Developer ID, so macOS blocks the first launch: open System Settings → Privacy
 **Windows:** run the `-setup.exe` (or the `.msi`). The installer is not code-signed, so SmartScreen
 may warn: choose **More info → Run anyway**.
 
+**Linux:** install the `.deb` (Debian, Ubuntu) or `.rpm` (Fedora, openSUSE), or run the `.AppImage`.
+Each comes for x86-64 (`amd64`/`x86_64`) and ARM64 (`arm64`/`aarch64`).
+
 Git must be installed; the app uses your own git.
 
 ## Features
@@ -52,9 +55,13 @@ Git must be installed; the app uses your own git.
 - Hide whitespace-only changes
 - Edit working-tree files right in the app
 - Commit, amend, and reword earlier commits on the current branch
+- Squash consecutive commits: select them with ⌘-click or ⇧-click
+- Apply patch files, as working-tree changes or as the commits of a `git format-patch` file
 
 **Branches and merging**
 - Create, rename and delete branches; merge, rebase, cherry-pick, revert and reset
+- Undo and redo (⌘Z, ⇧⌘Z) commits, checkouts, merges, rebases, resets, squashes and more
+- See which remotes have each tag; push a tag, or delete it locally or from a remote
 - Resolve merge conflicts in a merge editor, one conflict at a time
 - Stash, apply, pop, drop and rename stashes
 - Create and open worktrees, each in its own tab
@@ -67,7 +74,7 @@ Git must be installed; the app uses your own git.
 **Profiles**
 - Keep work and personal identities apart: author, SSH key, commit signing and HTTPS tokens
 - Repositories pick their profile by folder or remote URL; each profile has its own tabs
-- Tokens are stored in the macOS Keychain or Windows Credential Manager
+- Tokens are stored in the macOS Keychain, Windows Credential Manager or the Linux Secret Service
 
 **And**
 - A terminal in the repository, one keystroke away (⌃\`)
@@ -78,6 +85,14 @@ Git must be installed; the app uses your own git.
 Split diff of a commit, with the exact change within each line highlighted:
 
 ![A commit's diff, side by side](screenshots/diff.png)
+
+Squashing three commits into one:
+
+![Three commits selected, with the squash message form](screenshots/squash.png)
+
+A tag that is both here and on origin, which can be deleted from either:
+
+![A tag's menu with separate local and remote delete](screenshots/tags.png)
 
 Staging changes line by line and writing a commit:
 
